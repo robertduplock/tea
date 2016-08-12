@@ -3,7 +3,8 @@
 A simple, responsive node.js app designed to help people make the perfect cup of tea.
 
 Uses Bootstrap and Express. Otherwise it is written in pure OO Javascript.
-Tea data is collected via a RESTful api.
+
+Tea data is collected via an async xhr request (no jQuery required!) to a local *.json file.
 
 View the web app [HERE](http://tea.robertduplock.name)
 
