@@ -11,15 +11,13 @@
   <body>
   <div id="tea-main">
     <span class="title">&nbsp;Tea&nbsp;</span>
-    <img src="http://cdn-6.howtodrawit.com/img/coloring-teacup.jpg" alt="">
+    <img src="images/tea-2.jpg" alt="">
     <span class="title">Time(r)</span>
   </div>
-
-  <!-- empty column on left -->
-  <div class="col-md-1"></div>
   
-  <div class="col-md-6 left">
+  <div class="col-md-6 col-md-offset-1 left">
     <h3>Select Your Tea...</h3>
+    <img id="mute" src="images/alarm.png" title="Toggle alarm sound on / off"/>
     <ul class="nav nav-pills nav-stacked" id="select-tea">
       <% tea.teas.forEach(function(item){ %>
       <li id="<%=item.type %>" class="tea-type"><a href="#"><%= item.type %> Tea</a></li>
@@ -28,31 +26,33 @@
   </div>
 
   <!-- empty column between panels -->
-  <div class="col-md-1"></div>
 
-  <div class="col-md-3 right">
+  <div class="col-md-3 col-md-offset-1 right">
     <div class="well">
       Steep <span id="tea-type-right"></span> tea for about <span id="tea-time-right"></span> mins.
     </div>
     <div class="panel panel-default">
         <div class="panel-body steep">
-          Ideal water temperature for this tea is: <span id="tea-temp-right"></span> &deg;C
+          Ideal water temperature for this tea is: <span id="tea-temp-right"></span>
         </div>
     </div>
-    
+    <button type="button" id="switch" class="btn btn-info btn-block">Switch To Fahrenheit</button>
+    <br/>
     <div class="steep-button-wrapper">
-    <br /><p id="timer-set">Timer Set:</p>
-    <div id="timer"></div>
-    <br />
-      <button type="button" id="steeper" class="btn btn-success">
+      <br /><p id="timer-set">Timer Set:</p>
+      <div id="timer"></div>    
+      <button type="button" id="steeper" class="btn btn-success btn-block">
         Start The Steep Timer
       </button>
     </div>
 
   </div>
 
-  <!-- empty column on right -->
-  <div class="col-md-1"></div>
+  <div id="blackOut"></div>
+  <div id="timer-done">
+    <div><h3>&#127861; Your Tea Is Ready!<h3></div>
+    <button type="button" id="timer-done-close" class="btn btn-success">Close</button>
+  </div>
   
   <script src="javascripts/scripts.js"></script>
   </body>
