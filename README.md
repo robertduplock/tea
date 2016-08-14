@@ -10,5 +10,3 @@ View the web app [HERE](http://tea.robertduplock.name)
 
 ## TODO
 1. Improve overall layout & colour scheme
-2. Add (optional) browser alert when tea is done
-3. Add button to mute sound
