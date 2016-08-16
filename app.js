@@ -7,7 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
+var fs = require('fs');
+var teaJson = fs.readFileSync(__dirname + '/teas.json');
+var teas = JSON.parse(teaJson);
+
 var app = express();
+
+// RESTful GET response for teas
+app.get('/teas', function(req, res) {
+    res.send({ teas: teas });
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

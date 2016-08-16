@@ -4,12 +4,13 @@ var tea = {
     tempc: "95",
     tempf: "205",
     tempChoice: "c",
-    time: "4",
-    jsonPath: "../tea.json",
+    time: "04",
+    url: "/teas",
     sound: true,
     getTeaInfo: function(teaType) {
-        readTextFile(this.jsonPath, function(text) {
+        getAjax(this.url, function(text) {
             var data = JSON.parse(text);
+            data = data.teas;
             data.teas.forEach(function(item){
                 if (item.type == teaType) {
                     tea.setTeaInfo(item);
@@ -128,16 +129,18 @@ function setEventListeners() {
 
 }
 
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
+function getAjax(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            callback(xhr.responseText);
+        } else {
+            console.log(xhr.status);
         }
-    }
-    rawFile.send(null);
+    };
+    xhr.send();
 }
 
 // Test if notifications enabled (for future use)

@@ -1,0 +1,41 @@
+{
+    "teas": [
+        {
+            "type": "Black",
+            "tempc": "95",
+            "tempf": "205",
+            "time": "04"
+        },
+        {
+            "type": "Pu-erh",
+            "tempc": "95",
+            "tempf": "205",
+            "time": "04"
+        },
+        {
+            "type": "Oolong",
+            "tempc": "85",
+            "tempf": "185",
+            "time": "03"
+        },
+        {
+            "type": "White",
+            "tempc": "85",
+            "tempf": "185",
+            "time": "03"
+        },
+        {
+            "type": "Green",
+            "tempc": "80",
+            "tempf": "176",
+            "time": "02"
+        },
+        {
+            "type": "Herbal / Rooibos",
+            "tempc": "100",
+            "tempf": "212",
+            "time": "05"
+        }
+    ]
+
+}
