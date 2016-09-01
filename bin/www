@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+var fs = require('fs');
 var app = require('../app');
 var debug = require('debug')('tea:server');
 var http = require('http');
@@ -12,14 +13,20 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8282');
+var port = normalizePort(process.env.PORT || '8082');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(
+  // {
+  //   key: fs.readFileSync('./tls/privkey.pem'),
+  //   cert: fs.readFileSync('./tls/cert.pem')
+  // },
+  app
+);
 
 /**
  * Listen on provided port, on all network interfaces.

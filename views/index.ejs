@@ -20,14 +20,14 @@
     <img id="mute" src="images/alarm.png" title="Toggle alarm sound on / off"/>
     <ul class="nav nav-pills nav-stacked" id="select-tea">
       <% tea.teas.forEach(function(item){ %>
-      <li id="<%=item.type %>" class="tea-type"><a href="#"><%= item.type %> Tea</a></li>
+      <li id="<%=item.type %>" class="tea-type"><a href="#"><img src="images/tea-<%=item.type.toLowerCase() %>.png"/><%= item.type %> Tea</a></li>
       <% }); %>
     </ul>
   </div>
 
   <!-- empty column between panels -->
 
-  <div class="col-md-3 col-md-offset-1 right">
+  <div class="col-md-3 col-md-offset-1 right" id="tea-settings">
     <div class="well">
       Steep <span id="tea-type-right"></span> tea for about <span id="tea-time-right"></span> mins.
     </div>
@@ -42,16 +42,17 @@
       <br /><p id="timer-set">Timer Set:</p>
       <div id="timer"></div>    
       <button type="button" id="steeper" class="btn btn-success btn-block">
-        Start The Steep Timer
+        Start The Tea Time(r)
       </button>
     </div>
 
   </div>
-
-  <div id="blackOut"></div>
-  <div id="timer-done">
-    <div><h3>&#127861; Your Tea Is Ready!<h3></div>
-    <button type="button" id="timer-done-close" class="btn btn-success">Close</button>
+  <div id="popup-wrapper">
+    <div id="blackOut"></div>
+    <div id="timer-done">
+      <div><h3>&#127861; Your Tea Is Ready!<h3></div>
+      <button type="button" id="timer-done-close" class="btn btn-success">Close</button>
+    </div>
   </div>
   <script src="javascripts/scripts.js"></script>
   </body>
